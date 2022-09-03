@@ -1,0 +1,19 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pree-test": "npx playwright install",
+    "test": "npx playwright test --project=Chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "1.25.0",
+    "playwright": "1.25.0",
+    "ts-node": "10.8.0",
+    "typescript": "4.6.2"
+  }
+}

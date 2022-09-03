@@ -1,0 +1,23 @@
+version: 2.1
+jobs:
+  run-test:
+    docker:
+      - image: mcr.microsoft.com/playwright:v1.23.1-focal
+    # Steps to the job
+    steps:
+      - checkout
+      - run: npm i -D @playwright/test
+      - run: npx playwright install
+      - run: npx playwright install chrome
+      - run: npm i
+      - run: 
+          name: Run Pree test
+          command: npm run pree-test
+      - run:
+          name: Run test
+          command: npm run test
+# Invoke jobs via workflows
+workflows:
+  run-test-workflow:
+    jobs:
+      - run-test
