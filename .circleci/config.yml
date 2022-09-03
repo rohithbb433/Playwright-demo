@@ -6,10 +6,9 @@ jobs:
     # Steps to the job
     steps:
       - checkout
-      - run: npm i -D @playwright/test
-      - run: npx playwright install
-      - run: npx playwright install chrome
-      - run: npm i
+      - run: 
+          name: Install dependency
+          command: npm i
       - run: 
           name: Run Pree test
           command: npm run pree-test
